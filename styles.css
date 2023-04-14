@@ -174,11 +174,11 @@ form {
     outline: solid #ffa7a6 2px;
 }
 
-.textInput:valid {
+.textInput:not(:focus):not(:placeholder-shown):valid {
     border: solid greenyellow 2px;
 }
 
-.textInput:invalid {
+.textInput:not(:focus):not(:placeholder-shown):invalid {
     border: solid rgb(255, 56, 56) 2px;
 }
 
