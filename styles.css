@@ -1,0 +1,460 @@
+:root {
+    margin: 0px;
+    padding: 0px;
+    --containerWidth: 80vw;
+    --containerHeight: 100vh;
+    background-color: black;
+    --orange_color: #FF5733;
+    --light_green_color: #99fa99;
+    --poison_green_color: #004D40;
+    --blueish_green_color: #00404D;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#mainContainer {
+    display: flex;
+    margin: calc((100vh - var(--containerHeight))/2) calc((100vw - var(--containerWidth))/2);
+    width: var(--containerWidth);
+}
+
+#backgroundImage {
+    position: absolute;
+    width: 1000px;
+    height: auto;
+}
+
+#photoContainer {
+    position: relative;
+    display: flex;
+    flex: 0 1 auto;
+}
+
+#logoContainer {
+    position: absolute;
+    display: flex;
+    margin-top: 15vh;
+    width: 100%;
+    background-color: rgb(0, 0, 0, 0.4);
+    transition: 3s;
+    align-items: center;
+}
+
+#top {
+    width: 100%;
+    height: 100%;
+    padding-right: 30px;
+    font-family: norse_bold, sans-serif;
+    font-size: 8rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    overflow: hidden;
+}
+
+#logoContainer:hover{
+    transition: 2s;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#svg {
+    position: relative;
+    height: 200px;
+    width: auto;
+    overflow: visible;
+}
+
+#coverPhoto{
+    /*if display height is bigger than width, max width should be limited in js*/
+    height: var(--containerHeight);
+    width: auto;
+    /*transform: rotate(-90deg);*/
+}
+
+#dataContainer {
+    display: flex;
+    flex: 1 1 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: var(--containerHeight);
+    width: auto;
+    background-color: white;
+}
+
+.centered {
+    display: flex;
+    flex: 1 1 100%;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 45px;
+    justify-content: center;
+    align-items: center;
+    color:  black;
+    /*eddig ez a nyerö: #98FB98 #FF5733 */
+}
+
+#textContainer {
+    font-size: 1.4rem;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    color: #004D40;
+}
+
+#textHolder {
+    padding: 25px 25px 5px 10px;
+    margin-left: 60px;
+    margin-right: 200px;
+    box-shadow: 2px 2px 10px 2px rgba(255, 220, 220, 0.9);
+}
+
+#author {
+    padding-bottom: 5px;
+    width: 100%;
+    text-align: end;
+    padding-right: 250px;
+    font-style: italic;
+}
+
+#formContainer {
+    padding: 0;
+    background-color: #ffdcdc80;
+    color: var(--blueish_green_color);
+    padding-bottom: 30px;
+    box-shadow: 0px 4px 8px 0px rgba(238, 160, 160, 0.4), 0px -4px 3px 0px rgba(238, 160, 160, 0.2);
+}
+
+form {
+    display: flex;
+    padding-left: 60px;
+    flex-direction: column;
+    width: 100%;
+    min-height: 30vh;
+    /*border: solid green 2px;*/
+}
+
+#formLabel{
+    margin: 15px 45px;
+    margin-top: 25px;
+    width: fit-content;
+    padding: 5px 5px 5px 0;
+    font-size: 1.7rem;
+    font-weight: bold;
+    box-shadow: 3px 3px 6px 0px rgba(255, 220, 220, 1);
+}
+
+.label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.textInput {
+    width: 200px;
+    height: 25px;
+    padding-left: 3px;
+    color: var(--blueish_green_color);
+    border: solid rgba(255, 220, 220, 0.5) 0px;
+    box-shadow: 2px 2px 10px 2px rgba(255, 220, 220, 1);
+    font-family: inherit;
+}
+
+.textInput:hover {
+    transition: 500ms;
+    box-shadow: 6px 6px 6px 1px rgb(224, 156, 156);
+}
+
+.textInput:focus {
+    box-shadow: 6px 6px 6px 1px rgb(224, 156, 156);
+    outline: solid #ffa7a6 2px;
+}
+
+.textInput:valid {
+    border: solid greenyellow 2px;
+}
+
+.textInput:invalid {
+    border: solid rgb(255, 56, 56) 2px;
+}
+
+.inputContainer {
+    display: flex;
+    justify-content:start;
+    height: 100%;
+}
+
+.dataColumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    margin: 10px 45px;
+}
+
+#footerContainer {
+    display: block;
+    align-items: start;
+    justify-content: start;
+}
+
+#signUpButton {
+    margin-top: 15px;
+    margin-left: 60px;
+    width: 200px;
+    height: 40px;
+    background-color: #ffdcdc80;
+    font-size: 1.8rem;
+    font-family: norse_bold;
+    color: var(--blueish_green_color);
+    border: solid #ffdcdc80 0px;
+    box-shadow: 2px 2px 5px 1px rgb(254, 182, 182);
+    transition: 1000ms;
+}
+
+#signUpButton:hover {
+transition: 500ms;
+translate: -5% -10%;
+background-color: #ffa7a6;
+box-shadow: 6px 6px 10px 1px rgb(224, 156, 156);
+}
+
+#loginText {
+    padding: 15px 0 0 60px;
+    color: var(--blueish_green_color);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+#topLink {
+    color: white;
+    text-decoration: none;
+}
+
+#loginLink {
+    color: #ffa7a6;
+}
+
+/*Norse Bold font import*/
+@font-face {
+    font-family: norse_bold;
+    src: url(./norse_bold.otf)
+}
+
+/*SVG LOGO RELATED CSS*/
+
+
+/*SVG styling*/
+#bigLeaf1 {
+    fill: #FFC300;
+}
+#bigLeaf2, #bigLeaf3, #mediumMonstera, #smallMonstera2, #bigMonstera2{
+    fill: var(--orange_color);
+}
+ #smallMonstera3, #smallMonstera5 {
+    fill: var(--blueish_green_color);
+}
+#bigLeaf5, #smallMonstera1, #smallMonstera4, #bigMonstera1, #bigMonstera3{
+    fill: var(--light_green_color);
+}
+#bigLeaf4 {
+    fill: #FFC300;
+}
+
+/*Animation of the "awakening" when the logo is hovered*/
+#bigLeaf1, #bigLeaf2, #bigLeaf3, #bigLeaf4, #bigLeaf5, #bigMonstera1, #bigMonstera2, #bigMonstera3 {
+    transition: all 1.5s ease;
+}
+ #mediumMonstera, #smallMonstera1, #smallMonstera2, #smallMonstera3, #smallMonstera4, #smallMonstera5 {
+    transition: all 1s ease;
+}
+#svg:hover #bigLeaf5 {
+    translate: 20% 1%;
+    rotate: 10deg;
+}
+#svg:hover #bigLeaf2 {
+    transition-delay: 200ms;
+    translate: -25% 25%;
+    rotate: -25deg;
+}
+#svg:hover #bigLeaf1 {
+    transition-delay: 350ms;
+    translate: -25% 25%;
+    rotate: -20deg;
+}
+#svg:hover #bigLeaf3 {
+    transition-delay: 400ms;
+    translate: 20% -10%;
+    rotate: 20deg;
+}
+#svg:hover #bigLeaf4 {
+    transition-delay: 450ms;
+    translate: 20% -15%;
+    rotate: 20deg;
+}
+#svg:hover #bigMonstera1 {
+    transition-delay: 500ms;
+    translate: -5% 5%;
+}
+#svg:hover #bigMonstera2 {
+    transition-delay: 500ms;
+    translate: -2% 4%;
+}
+#svg:hover #bigMonstera3 {
+    transition-delay: 525ms;
+    translate: 5% 10%;
+}
+#odin_logo{
+    transition: all 0.75s ease;
+    translate: -2% 10%;
+    opacity: 0;
+}
+#svg:hover #odin_logo{
+    transition-delay: 300ms;
+    translate: -2% 0%;
+    opacity: 1;
+}
+#svg:hover #mediumMonstera {
+    transition-delay: 300ms;
+    translate: 0 100%;
+    rotate: -40deg;
+    opacity: 0;
+}
+#svg:hover #smallMonstera1 {
+    transition-delay: 300ms;
+    translate: 0 35%;
+    rotate: 60deg;
+    opacity: 0;
+}
+#svg:hover #smallMonstera2 {
+    transition-delay: 300ms;
+    translate: 0 35%;
+    rotate: 40deg;
+    opacity: 0;
+}
+#svg:hover #smallMonstera3 {
+    transition-delay: 300ms;
+    translate: 0 35%;
+    opacity: 0;
+}
+#svg:hover #smallMonstera4 {
+    transition-delay: 300ms;
+    translate: 0 35%;
+    opacity: 0;
+}
+#svg:hover #smallMonstera5 {
+    transition-delay: 300ms;
+    translate: 0 35%;
+    opacity: 0;
+}
+
+
+/*Sleep animation when the user hovers over mainContainer(100vh, 100vw)*/
+#z, #z_2, #z_3, #z_4, #z_5, #z_6 {
+    fill: #FFC300;
+    opacity: 0;
+}
+#mainContainer:hover #z{
+    animation: floatZ 3s both infinite;
+}
+#mainContainer:hover #z_2{
+    animation: floatZ2 3s both infinite;
+}
+#mainContainer:hover #z_3{
+    animation: floatZ3 3s both infinite;
+}
+#mainContainer:hover #z_4{
+    animation: floatZ4 3s both infinite;
+}
+#mainContainer:hover #z_5{
+    animation: floatZ5 3s both infinite;
+}
+#mainContainer:hover #z_6{
+    animation: floatZ6 3s both infinite;
+}
+@keyframes floatZ {
+    from {
+        translate: -30% 25%;
+        opacity: 1;
+    }
+    to {
+        translate: 30% -10%;
+        opacity: 0;
+    }
+}
+@keyframes floatZ2 {
+    from {
+        translate: -40% 25%;
+        opacity: 1;
+        
+    }
+    to {
+        translate: 30% -10%;
+        opacity: 0;
+    }
+}
+@keyframes floatZ3 {
+    from {
+        translate: -20% 40%;
+        opacity: 1;
+    }
+    to {
+        translate: 30% -10%;
+        opacity: 0;
+    }
+}
+@keyframes floatZ4 {
+    from {
+        translate: -10% 30%;
+        opacity: 1;
+    }
+    to {
+        translate: 30% -10%;
+        opacity: 0;
+    }
+}
+@keyframes floatZ5 {
+    from {
+        translate: -10% 30%;
+        opacity: 1;
+    }
+    to {
+        translate: 30% -10%;
+        opacity: 0;
+    }
+}
+@keyframes floatZ6 {
+    from {
+        translate: -30% 30%;
+        opacity: 1;
+    }
+    to {
+        translate: 30% -5%;
+        opacity: 0;
+    }
+}
+
+
+/*The empty stopZ(X) animations override the previous floatZ(X) animations when the logo is hovered, the Z-s stop floating*/
+#svg:hover #z{
+    animation: stopZ 3s both infinite;
+}
+#svg:hover #z_2{
+    animation: stopZ2 3s both infinite;
+}
+#svg:hover #z_3{
+    animation: stopZ3 3s both infinite;
+}
+#svg:hover #z_4{
+    animation: stopZ4 3s both infinite;
+}
+#svg:hover #z_5{
+    animation: stopZ5 3s both infinite;
+}
+#svg:hover #z_6{
+    animation: stopZ6 3s both infinite;
+}
